@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.cm.spring.social.instagram;
+package com.cm.spring.social.instagram.connect;
 
 
 import com.cm.spring.social.instagram.api.Instagram;

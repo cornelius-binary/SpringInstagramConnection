@@ -7,6 +7,7 @@
 package com.cm.spring.social.instagram.api;
 
 import com.cm.spring.social.instagram.api.models.Location;
+import java.util.Collection;
 
 /**
  *
@@ -24,15 +25,15 @@ public interface LocationOperations {
      * @param latitude Latitude of the center search coordinate. If used, lng is required 
      * @param longitude Longitude of the center search coordinate. If used, lat is required.
      * @param distance Default is 500m (distance=500), max distance is 750. 
-     * @return Location object
+     * @return Collection of Location object
      */
-    Location searchLocation(Long latitude, Long longitude, float distance);
+    Collection<Location> searchLocation(Long latitude, Long longitude, float distance);
     /**
      * Search for a location by facebook place id
      * @param facebookPlacesId Returns a location mapped off of a Facebook places id.
      * @param distance Default is 500m (distance=500), max distance is 750.
-     * @return Location object
+     * @return Collection of Location object
      */
-    Location searchLocation(Long facebookPlacesId, float distance);
+    Collection<Location> searchLocation(Long facebookPlacesId, float distance);
 
 }

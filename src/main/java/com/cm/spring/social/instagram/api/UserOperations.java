@@ -27,7 +27,7 @@ public interface UserOperations {
      * @param userId the user id of the intended user
      * @return returns user profile inform of UserProfileTemplate object
      */
-    public UserProfileTemplate getUser(Long userId);
+    public UserProfileTemplate getUser(String userId);
     
     /**
      * Used to return recent user media. 
@@ -37,7 +37,7 @@ public interface UserOperations {
      * @param max_id return items earlier than this id
      * @return returns a collection Media object
      */
-    public Collection<Media> getRecentMedia(int count, Long min_id, Long max_id);
+    public Collection<Media> getRecentMedia(int count, String min_id, String max_id);
     /**
      * Used to return recent user media using userId
      * If both min_id and max_id are set to null, only first elements specified by the count will be returned
@@ -47,14 +47,14 @@ public interface UserOperations {
      * @param userId the user id of the intended user
      * @return returns a collection Media object
      */
-    public Collection<Media> getRecentMedia(Long userId, int count, Long min_id, Long max_id);
+    public Collection<Media> getRecentMedia(String userId, int count, String min_id, String max_id);
     /**
      * Used to get liked media of the current user
      * @param count number of items to return
      * @param max_liked_id return items earlier than this id
      * @return a collection of Media items
      */
-    public Collection<Media> getLikedMedia(int count, Long max_liked_id);
+    public Collection<Media> getLikedMedia(int count, String max_liked_id);
     /**
      * used to search a user using the specified query parameter
      * @param count number of results to return
@@ -82,14 +82,14 @@ public interface UserOperations {
      * @param userId user id of the targeted user
      * @return Relationship object
      */
-    public Relationship getRelationship(Long userId);
+    public Relationship getRelationship(String userId);
     /**
      * used to update the relationship of the current user to the indicated user
      * @param userId user id of the targeted user
      * @param action relationship action e.g. follow | unfollow | approve | ignore
      * @return Relationship object
      */
-    public Relationship updateRelationship(Long userId, String action);
+    public Relationship updateRelationship(String userId, String action);
     
     
 }

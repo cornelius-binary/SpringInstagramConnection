@@ -4,14 +4,13 @@
  * and open the template in the editor.
  */
 
-package com.cm.spring.social.instagram;
-
-import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
+package com.cm.spring.social.instagram.api.models;
 
 /**
  *
  * @author Cornelius M
  */
-public class InstagramAbstractOAuth2ApiBinding extends AbstractOAuth2ApiBinding {
-
+public class  Constants {
+    public final static String USER_NOT_FOUND = "User not found";
+    public final static String  UNDEFINED_EXCEPTION = "Bad request exception";
 }

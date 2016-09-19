@@ -3,49 +3,60 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.cm.spring.social.instagram.api.models;
 
 import com.cm.spring.social.instagram.api.Instagram;
 import com.cm.spring.social.instagram.api.UserOperations;
 import com.cm.spring.social.instagram.api.Media;
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
  * @author Cornelius M
  */
 public class UserOperationsTemplate extends OperationsTemplate implements UserOperations {
-    
+
     //final private String access_token;
     private final Instagram instagram;
-    
-    public UserOperationsTemplate(InstagramTemplate instagram){
+    @Autowired
+    private MultiValueMap<String, String> valueMap;
+    private final RestTemplate restTemplate;
+
+    public UserOperationsTemplate(InstagramTemplate instagram) {
         super(instagram);
         this.instagram = instagram;
+        this.restTemplate = instagram.getRestTemplate();
     }
+
     @Override
     public UserProfileTemplate getUser() {
-        return get(buildUri(USER_ENDPOINT+"/self/?access_token="+instagram.getAccessToken()), UserProfileResponse.class).getData();
+        return get(buildAuthorizedUri(USER_ENDPOINT + "self/"), UserProfileResponse.class).getData();
     }
 
     @Override
-    public UserProfileTemplate getUser(Long userId) {
+    public UserProfileTemplate getUser(String userId) {
+        return get(buildAuthorizedUri(USER_ENDPOINT + userId), UserProfileResponse.class).getData();
+
+    }
+
+    @Override
+    public Collection<Media> getRecentMedia(int count, String min_id, String max_id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Collection<Media> getRecentMedia(int count, Long min_id, Long max_id) {
+    public Collection<Media> getRecentMedia(String userId, int count, String min_id, String max_id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Collection<Media> getRecentMedia(Long userId, int count, Long min_id, Long max_id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Collection<Media> getLikedMedia(int count, Long max_liked_id) {
+    public Collection<Media> getLikedMedia(int count, String max_liked_id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -70,12 +81,12 @@ public class UserOperationsTemplate extends OperationsTemplate implements UserOp
     }
 
     @Override
-    public Relationship getRelationship(Long userId) {
+    public Relationship getRelationship(String userId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Relationship updateRelationship(Long userId, String action) {
+    public Relationship updateRelationship(String userId, String action) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

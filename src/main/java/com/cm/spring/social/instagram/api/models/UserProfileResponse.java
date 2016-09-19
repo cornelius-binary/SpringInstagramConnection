@@ -7,11 +7,12 @@
 package com.cm.spring.social.instagram.api.models;
 
 /**
- *
+ * used to model profile response
  * @author Cornelius M
  */
 public class UserProfileResponse {
     private UserProfileTemplate data;
+    private ErrorResponse meta;
 
     public UserProfileTemplate getData() {
         return data;
@@ -20,6 +21,16 @@ public class UserProfileResponse {
     public void setData(UserProfileTemplate data) {
         this.data = data;
     }
+
+    public ErrorResponse getMeta() {
+        return meta;
+    }
+
+    public void setMeta(ErrorResponse meta) {
+        this.meta = meta;
+    }
+    
+    
     
     
 }

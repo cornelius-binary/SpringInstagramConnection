@@ -1,4 +1,4 @@
-package com.cm.spring.social.instagram;
+package com.cm.spring.social.instagram.connect;
 
 import com.cm.spring.social.instagram.api.Instagram;
 import org.springframework.social.connect.support.OAuth2ConnectionFactory;
