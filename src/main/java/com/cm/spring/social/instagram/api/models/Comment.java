@@ -18,7 +18,7 @@ public class Comment{
     private Long created_time;
     private String text;
     private UserProfileTemplate from;
-    private Long id;
+    private String id;
     public Comment(){
         
     }
@@ -55,11 +55,11 @@ public class Comment{
         this.from = from;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
     

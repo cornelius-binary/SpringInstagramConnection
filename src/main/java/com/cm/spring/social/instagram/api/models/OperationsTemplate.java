@@ -63,6 +63,13 @@ public class OperationsTemplate {
 //        return restTemplate.exchange(url, HttpMethod.POST, entity, object).getBody();
         return restTemplate.postForObject(url, params, object);
     }
+    /**
+     * Process delete requests     *
+     * @param url targeted url
+     */
+    protected void delete(URI url) {
+        restTemplate.delete(url);
+    }
 
     protected URI buildUri(String path) {
         return buildUri(path, null, false);

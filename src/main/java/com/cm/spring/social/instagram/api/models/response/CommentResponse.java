@@ -6,19 +6,26 @@
 
 package com.cm.spring.social.instagram.api.models.response;
 
+import com.cm.spring.social.instagram.api.models.Comment;
+
 /**
  *
  * @author Cornelius M
  */
-public class Meta {
-    private int code;
-
-    public int getCode() {
-        return code;
+public class CommentResponse {
+    private Comment data;
+    
+    public CommentResponse(){
+        
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public Comment getData() {
+        return data;
     }
+
+    public void setData(Comment data) {
+        this.data = data;
+    }
+    
     
 }

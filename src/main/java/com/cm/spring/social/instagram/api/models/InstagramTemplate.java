@@ -36,7 +36,7 @@ public class InstagramTemplate extends AbstractOAuth2ApiBinding implements Insta
 
     @Override
     public MediaOperations mediaOperations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new MediaOperationsTemplate(this);
     }
 
     @Override

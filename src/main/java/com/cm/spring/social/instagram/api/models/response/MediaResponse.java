@@ -6,19 +6,26 @@
 
 package com.cm.spring.social.instagram.api.models.response;
 
+import com.cm.spring.social.instagram.api.models.Media;
+
 /**
  *
  * @author Cornelius M
  */
-public class Meta {
-    private int code;
-
-    public int getCode() {
-        return code;
+public class MediaResponse {
+    private Media data;
+    
+    public MediaResponse(){
+        
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public Media getData() {
+        return data;
     }
+
+    public void setData(Media data) {
+        this.data = data;
+    }
+    
     
 }

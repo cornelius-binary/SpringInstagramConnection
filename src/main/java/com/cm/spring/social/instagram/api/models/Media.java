@@ -28,7 +28,7 @@ public class Media {
     private String created_time;
     private Images images;
     private String id;
-    private String location;
+    private Location location;
     private Videos videos;
     
     public Media(){
@@ -141,11 +141,11 @@ public class Media {
         this.id = id;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 

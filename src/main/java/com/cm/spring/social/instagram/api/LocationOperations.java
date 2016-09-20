@@ -7,6 +7,7 @@
 package com.cm.spring.social.instagram.api;
 
 import com.cm.spring.social.instagram.api.models.Location;
+import com.cm.spring.social.instagram.api.models.Media;
 import java.util.Collection;
 
 /**
@@ -35,5 +36,14 @@ public interface LocationOperations {
      * @return Collection of Location object
      */
     Collection<Location> searchLocation(Long facebookPlacesId, float distance);
+    /**
+     * Get a list of recent media objects from a given location.
+     *
+     * @param locationId Location id
+     * @param minId Return media before this min_id
+     * @param maxId Return media after this max_id.
+     * @return a Collection of Media objects
+     */
+    public Collection<Media> findByLocation(String locationId, Long minId, Long maxId);
 
 }
