@@ -12,7 +12,7 @@ package com.cm.spring.social.instagram.api.models;
  */
 public class Tag {
     private Long media_count;
-    private String nofilter;
+    private String name;
 
     public Long getMedia_count() {
         return media_count;
@@ -22,12 +22,12 @@ public class Tag {
         this.media_count = media_count;
     }
 
-    public String getNofilter() {
-        return nofilter;
+    public String getName() {
+        return name;
     }
 
-    public void setNofilter(String nofilter) {
-        this.nofilter = nofilter;
+    public void setName(String name) {
+        this.name = name;
     }
     
     

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.cm.spring.social.instagram.api.models;
 
 import com.cm.spring.social.instagram.api.Instagram;
@@ -18,15 +17,17 @@ import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
  * @author Cornelius M
  */
 public class InstagramTemplate extends AbstractOAuth2ApiBinding implements Instagram {
+
     private String accessToken;
-    public InstagramTemplate(String accessToken){
+
+    public InstagramTemplate(String accessToken) {
         super(accessToken);
         this.accessToken = accessToken;
     }
 
     @Override
     public TagsOperations tagOperations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new TagsOperationsTemplate(this);
     }
 
     @Override
@@ -45,5 +46,6 @@ public class InstagramTemplate extends AbstractOAuth2ApiBinding implements Insta
     }
 
     public String getAccessToken() {
-return accessToken;    }
+        return accessToken;
+    }
 }

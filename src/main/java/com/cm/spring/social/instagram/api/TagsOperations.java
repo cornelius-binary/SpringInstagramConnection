@@ -6,6 +6,7 @@
 
 package com.cm.spring.social.instagram.api;
 
+import com.cm.spring.social.instagram.api.models.Media;
 import com.cm.spring.social.instagram.api.models.Tag;
 import java.util.Collection;
 
@@ -14,6 +15,7 @@ import java.util.Collection;
  * @author Cornelius M.
  */
 public interface TagsOperations {
+    public final String TAG_ENDPOINT = "tags/";
     /**
      * Get information about a tag object. 
      * @param tagName
@@ -26,9 +28,9 @@ public interface TagsOperations {
     * @param count Count of tagged media to return.
     * @param minTagId Return media before this min_tag_id. 
     * @param maxTagId Return media after this max_tag_id
-    * @return a Collection of recent tags
+    * @return a Collection of recent tagged media
     */
-   public Collection<Tag> getRecentTags(String tagName, Long count, Long minTagId, Long maxTagId);
+   public Collection<Media> getRecentTags(String tagName, Long count, String minTagId, String maxTagId);
    /**
     * Search for tags by name
     * @param query A valid tag name without a leading #. (eg. snowy, nofilter)
