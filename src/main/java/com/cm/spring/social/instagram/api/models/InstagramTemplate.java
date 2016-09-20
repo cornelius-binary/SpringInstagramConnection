@@ -32,7 +32,7 @@ public class InstagramTemplate extends AbstractOAuth2ApiBinding implements Insta
 
     @Override
     public LocationOperations locationOperations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new LocationOperationsTemplate(this);
     }
 
     @Override

@@ -5,10 +5,8 @@
  */
 package com.cm.spring.social.instagram.api.models;
 
-import static com.cm.spring.social.instagram.api.MediaOperations.MEDIA_ENDPOINT;
 import com.cm.spring.social.instagram.api.TagsOperations;
 import com.cm.spring.social.instagram.api.models.response.MediaCollectionResponse;
-import com.cm.spring.social.instagram.api.models.response.MediaResponse;
 import com.cm.spring.social.instagram.api.models.response.TagResponse;
 import com.cm.spring.social.instagram.api.models.response.TagResponseCollection;
 import java.util.Collection;
