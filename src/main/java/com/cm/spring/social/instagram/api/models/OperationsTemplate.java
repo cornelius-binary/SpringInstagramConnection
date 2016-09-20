@@ -7,6 +7,10 @@ package com.cm.spring.social.instagram.api.models;
 
 import java.net.URI;
 import java.util.Map;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
@@ -27,15 +31,37 @@ public class OperationsTemplate {
     public OperationsTemplate(InstagramTemplate instagram) {
         this.instagram = instagram;
         restTemplate = instagram.getRestTemplate();
+
         restTemplate.setErrorHandler(new InstagramErrorHandler());
     }
 
+    /**
+     * Process get requests
+     *
+     * @param <T> model class
+     * @param url
+     * @param object response class
+     * @return
+     */
     protected <T> T get(URI url, Class<T> object) {
-//        try {
-//            instagram.getRestTemplate().getForObject(url, object);
-//        } catch (RestClientException ex) {
-//        }
-        return instagram.getRestTemplate().getForObject(url, object);
+        return restTemplate.getForObject(url, object);
+    }
+
+    /**
+     * Process post requests
+     *
+     * @param <C>
+     * @param url
+     * @param params
+     * @param object
+     * @return
+     */
+    protected <C> C post(URI url, MultiValueMap<String, Object> params, Class<C> object) {
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+//        HttpEntity entity = new HttpEntity(headers);
+//        return restTemplate.exchange(url, HttpMethod.POST, entity, object).getBody();
+        return restTemplate.postForObject(url, params, object);
     }
 
     protected URI buildUri(String path) {

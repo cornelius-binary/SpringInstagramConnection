@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.social.InvalidAuthorizationException;
 import org.springframework.social.ResourceNotFoundException;
 import org.springframework.social.ServerException;
 import org.springframework.web.client.DefaultResponseErrorHandler;
@@ -42,11 +43,19 @@ public class InstagramErrorHandler extends DefaultResponseErrorHandler {
 
     private void handleBadRequest(ClientHttpResponse response) {        
         ErrorResponse errorRes = this.parseErrorStream(response);
-        System.out.println("----------------------------------------Error: "+errorRes.getMeta().getError_message());
-        if(errorRes.getMeta().getError_message().contains("this user does not exist")){
+        String errorMsg = errorRes.getMeta().getError_message();
+        if(errorMsg.contains("this user does not exist")){
             throw new ResourceNotFoundException("instagram", Constants.USER_NOT_FOUND);
-        }else{
-            throw new ServerException("instagram", Constants.UNDEFINED_EXCEPTION);
+        }else if(errorMsg.contains("The access_token provided is invalid")){
+            throw new InvalidAuthorizationException("instagram", Constants.INVALID_TOKEN);
+        }else if(errorMsg.contains("but this access token is not authorized with this scope")){
+            throw new InvalidAuthorizationException("instagram", Constants.INVALID_SCOPE);
+        }else if(errorMsg.contains("This action is invalid")){
+            throw new InvalidAuthorizationException("instagram", errorMsg);
+        }
+        
+        else{
+            throw new ServerException("instagram", Constants.UNDEFINED_EXCEPTION + "(Details: " + errorMsg + ")");
         }
     }
     /**

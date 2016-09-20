@@ -7,6 +7,7 @@
 package com.cm.spring.social.instagram.api;
 
 import com.cm.spring.social.instagram.api.models.Comment;
+import com.cm.spring.social.instagram.api.models.Media;
 import com.cm.spring.social.instagram.api.models.UserProfileTemplate;
 import java.util.Collection;
 

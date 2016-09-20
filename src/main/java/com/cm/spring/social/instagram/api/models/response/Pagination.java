@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package com.cm.spring.social.instagram.api;
+package com.cm.spring.social.instagram.api.models.response;
 
 /**
  *
- * @author Cornelius M.
+ * @author Cornelius M
  */
-public interface Media {
+public class Pagination {
 
 }

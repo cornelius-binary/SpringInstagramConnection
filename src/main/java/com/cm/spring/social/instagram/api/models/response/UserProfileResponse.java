@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.cm.spring.social.instagram.api.models;
+package com.cm.spring.social.instagram.api.models.response;
+
+import com.cm.spring.social.instagram.api.models.ErrorResponse;
+import com.cm.spring.social.instagram.api.models.UserProfileTemplate;
 
 /**
  * used to model profile response

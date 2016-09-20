@@ -6,12 +6,14 @@
 
 package com.cm.spring.social.instagram.api.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
 /**
  *
  * @author Cornelius M
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Media {
     private float distance;
     private String type;
@@ -19,15 +21,19 @@ public class Media {
     private String filter;
     private String[] tags;
     private Comment comments;
-    private String caption;
+    private Caption caption;
     private Likes likes;
     private String link;
     private UserProfileTemplate user;
-    private Long created_time;
+    private String created_time;
     private Images images;
-    private Long id;
+    private String id;
     private String location;
     private Videos videos;
+    
+    public Media(){
+        
+    }
 
     public float getDistance() {
         return distance;
@@ -79,11 +85,11 @@ public class Media {
         this.comments = comments;
     }
 
-    public String getCaption() {
+    public Caption getCaption() {
         return caption;
     }
 
-    public void setCaption(String caption) {
+    public void setCaption(Caption caption) {
         this.caption = caption;
     }
 
@@ -111,11 +117,11 @@ public class Media {
         this.user = user;
     }
 
-    public Long getCreated_time() {
+    public String getCreated_time() {
         return created_time;
     }
 
-    public void setCreated_time(Long created_time) {
+    public void setCreated_time(String created_time) {
         this.created_time = created_time;
     }
 
@@ -127,11 +133,11 @@ public class Media {
         this.images = images;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

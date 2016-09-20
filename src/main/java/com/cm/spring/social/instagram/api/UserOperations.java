@@ -6,6 +6,7 @@
 
 package com.cm.spring.social.instagram.api;
 
+import com.cm.spring.social.instagram.api.models.Media;
 import com.cm.spring.social.instagram.api.models.Relationship;
 import com.cm.spring.social.instagram.api.models.UserProfileTemplate;
 import java.util.Collection;
@@ -33,28 +34,28 @@ public interface UserOperations {
      * Used to return recent user media. 
      * If both min_id and max_id are set to null, only first elements specified by the count will be returned
      * @param count number of items to return
-     * @param min_id return items later than this id
-     * @param max_id return items earlier than this id
+     * @param minId return items later than this id
+     * @param maxId return items earlier than this id
      * @return returns a collection Media object
      */
-    public Collection<Media> getRecentMedia(int count, String min_id, String max_id);
+    public Collection<Media> getRecentMedia(int count, String minId, String maxId);
     /**
      * Used to return recent user media using userId
      * If both min_id and max_id are set to null, only first elements specified by the count will be returned
      * @param count number of items to return
-     * @param min_id return items later than this id
-     * @param max_id return items earlier than this id
+     * @param minId return items later than this id
+     * @param maxId return items earlier than this id
      * @param userId the user id of the intended user
      * @return returns a collection Media object
      */
-    public Collection<Media> getRecentMedia(String userId, int count, String min_id, String max_id);
+    public Collection<Media> getRecentMedia(String userId, int count, String minId, String maxId);
     /**
      * Used to get liked media of the current user
      * @param count number of items to return
-     * @param max_liked_id return items earlier than this id
+     * @param maxLikedId return items earlier than this id
      * @return a collection of Media items
      */
-    public Collection<Media> getLikedMedia(int count, String max_liked_id);
+    public Collection<Media> getLikedMedia(int count, String maxLikedId);
     /**
      * used to search a user using the specified query parameter
      * @param count number of results to return
