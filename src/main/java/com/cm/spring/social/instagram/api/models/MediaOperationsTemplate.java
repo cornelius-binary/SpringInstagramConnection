@@ -6,14 +6,10 @@
 package com.cm.spring.social.instagram.api.models;
 
 import com.cm.spring.social.instagram.api.MediaOperations;
-import static com.cm.spring.social.instagram.api.UserOperations.USER_ENDPOINT;
 import com.cm.spring.social.instagram.api.models.response.CommentCollectionResponse;
-import com.cm.spring.social.instagram.api.models.response.CommentResponse;
 import com.cm.spring.social.instagram.api.models.response.GeneralResponse;
 import com.cm.spring.social.instagram.api.models.response.MediaCollectionResponse;
 import com.cm.spring.social.instagram.api.models.response.MediaResponse;
-import com.cm.spring.social.instagram.api.models.response.RelationshipResponse;
-import com.cm.spring.social.instagram.api.models.response.UserProfileResponse;
 import com.cm.spring.social.instagram.api.models.response.UserProfileResponseCollection;
 import java.util.Collection;
 import org.springframework.util.LinkedMultiValueMap;

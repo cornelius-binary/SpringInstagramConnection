@@ -6,11 +6,9 @@
 package com.cm.spring.social.instagram.api.models;
 
 import com.cm.spring.social.instagram.api.LocationOperations;
-import static com.cm.spring.social.instagram.api.MediaOperations.MEDIA_ENDPOINT;
 import com.cm.spring.social.instagram.api.models.response.LocationCollectionResponse;
 import com.cm.spring.social.instagram.api.models.response.LocationResponse;
 import com.cm.spring.social.instagram.api.models.response.MediaCollectionResponse;
-import com.cm.spring.social.instagram.api.models.response.MediaResponse;
 import java.util.Collection;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;

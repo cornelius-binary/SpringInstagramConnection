@@ -10,7 +10,7 @@ package com.cm.spring.social.instagram.api.models;
  *
  * @author Cornelius M
  */
-class Likes{
+public class Likes{
     private String count;
 
     public String getCount() {

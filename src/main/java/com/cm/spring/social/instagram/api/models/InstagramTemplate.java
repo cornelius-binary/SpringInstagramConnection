@@ -18,7 +18,7 @@ import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
  */
 public class InstagramTemplate extends AbstractOAuth2ApiBinding implements Instagram {
 
-    private String accessToken;
+    private final String accessToken;
 
     public InstagramTemplate(String accessToken) {
         super(accessToken);

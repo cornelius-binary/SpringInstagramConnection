@@ -10,7 +10,6 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Collections;
 import java.util.Map;
 import java.util.logging.Level;
@@ -27,7 +26,7 @@ import org.springframework.web.client.DefaultResponseErrorHandler;
  * @author Cornelius M
  */
 public class InstagramErrorHandler extends DefaultResponseErrorHandler {
-    private ObjectMapper mapper;
+    private final ObjectMapper mapper;
     public InstagramErrorHandler(){
         mapper = new ObjectMapper(new JsonFactory());
     }
